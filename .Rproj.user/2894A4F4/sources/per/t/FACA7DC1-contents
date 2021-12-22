@@ -1,0 +1,71 @@
+library(FactoMineR)
+library(factoextra)
+#2-Importer les donnees de demonstrAtion
+#import from the exterieur read.csv 
+data("USArrests")
+fix(USArrests)
+
+
+#3-Calculer l'ACP en utilisant les donnes de demonstration
+res.pca = PCA(USArrests,ncp=2,graph=FALSE)
+res.pca
+res.pca$var
+
+#4-visualiser les valeurs propres, montre le pourcentage 
+eig.val <- get_eigenvalue(res.pca)
+eig.val
+eig.val <- 
+barplot(eig.val[, 2],
+        names.arg=1:nrow(eig.val),#nbr de ligne de eig.val = 4
+        main="variance explained byPCs (%)",
+        xlab = "Principal Components",
+        ylab = "Percentage of variances",
+        col = "steelblue")
+#add connected line segments to the plot 
+lines(x = 1:4,eig.val[, 2],type = "b",pch = 19,col = "red")#type=type de ligne,pch=taille de ligne
+
+#5-Graphique des individus, les individusimilaire
+plot(res.pca, choix = "ind", autolab = "yes")
+
+#6-Graphique des variables, les variables correlees 
+#Les variables correlees negativement sont sur des 
+plot(res.pca, choix = "var", autolab = "yes")
+
+#7-acceder aux resultats de l'acp
+#valeurs propres
+res.pca$eig
+
+#resultat des variables
+res.var <- res.pca$var
+res.var$coord
+res.var$contrib
+res.var$cos2
+
+#resultat des individus
+res.ind <- res.pca$var
+res.ind$coord
+res.ind$contrib
+res.ind$cos2
+
+data("housetasks")
+housetasks
+fix(housetasks)
+
+#1-convertir les donnees en tant que table 
+dt<-as.table(as.matrix(housetasks))
+
+#2-Graphique
+balloonplot(t (dt),
+            main = "housetasks",
+            xlab = "",
+            ylab = "",
+            label = FALSE,
+            show.margins = FALSE)
+chisq <- chisq.test(housetasks)
+chisq
+res.ca <- CA (housetasks, graph = FALSE)
+print(res.ca)
+res.ca$col$coord
+eig.val <- get_eigenvalue(res.ca)
+eig.val
+

@@ -1,0 +1,10 @@
+library(FactoMineR)
+library(factoextra)
+
+basecap=read.csv(file.choose(),header = T,sep = ",")
+attach(basecap)
+
+regression.lm<-lm(Y=X1+X2+X3,data(basecap))
+summary(regression.lm)
+
+

@@ -1,0 +1,32 @@
+{
+    "id": "8A0792C7",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1587917386301.0,
+    "source_on_save": false,
+    "relative_order": 3,
+    "properties": {
+        "cacheKey": "3895BEB7",
+        "caption": "basecap",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=basecap&cache_key=3895BEB7",
+        "displayedObservations": "22",
+        "environment": "",
+        "expression": "basecap",
+        "object": "basecap",
+        "preview": "0",
+        "totalObservations": "22",
+        "variables": "4"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1587917277,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1587917386301,
+    "read_only": false,
+    "read_only_alternatives": []
+}
